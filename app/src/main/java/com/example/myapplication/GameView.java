@@ -206,6 +206,12 @@ public class GameView extends View {
         return true;
     }
 
+    // ================= NEIGHBOR =================
+    private boolean isNeighbor(Bubble a, Bubble b) {
+        float d = (float) Math.hypot(a.x - b.x, a.y - b.y);
+        return d <= a.radius * 2.2f;
+    }
+
 
 
     // ================= CONNECTED DFS =================
