@@ -213,5 +213,19 @@ public class GameView extends View {
 
 
 
+    // ================= CONNECTED DFS =================
+    private void findConnected(Bubble start, ArrayList<Bubble> result) {
+        result.add(start);
 
+        for (Bubble b : grid) {
+            if (b.isVisible &&
+                    b.color == start.color &&
+                    !result.contains(b) &&
+                    isNeighbor(start, b)) {
+
+                findConnected(b, result);
+            }
+        }
+    }
+}
 
