@@ -173,4 +173,45 @@ public class GameView extends View {
             if (y < 100) break;
         }
     }
+    // ================= TOUCH =================
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        float dx = event.getX() - bx;
+        float dy = event.getY() - by;
+        float dist = (float) Math.hypot(dx, dy);
+
+        switch (event.getAction()) {
+
+            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_MOVE:
+                if (!isShooting) {
+                    aimX = dx / dist;
+                    aimY = dy / dist;
+                    showAim = true;
+                }
+                break;
+
+            case MotionEvent.ACTION_UP:
+                if (!isShooting && ammoLeft > 0) {
+                    vx = aimX * 50;
+                    vy = aimY * 50;
+                    isShooting = true;
+                    ammoLeft--;
+                }
+                showAim = false;
+                break;
+        }
+        return true;
+    }
+
+    // ================= NEIGHBOR =================
+    private boolean isNeighbor(Bubble a, Bubble b) {
+        float d = (float) Math.hypot(a.x - b.x, a.y - b.y);
+        return d <= a.radius * 2.2f;
+    }
+
+
+
+
 
