@@ -149,7 +149,31 @@ public class GameView extends View {
     }
 
     // ================= WALL BOUNCE AIM LINE =================
-    private void drawBounceAimLine(Canvas canvas)
+    private void drawBounceAimLine(Canvas canvas) {
+        paint.setColor(Color.WHITE);
+        paint.setAlpha(160);
+
+        float x = bx;
+        float y = by;
+
+        float dx = aimX;
+        float dy = aimY;
+
+        for (int i = 0; i < 25; i++) {
+            x += dx * 50;
+            y += dy * 50;
+
+            // Wall bounce
+            if (x < ballRadius || x > getWidth() - ballRadius) {
+                dx = -dx;
+            }
+
+            canvas.drawCircle(x, y, 6, paint);
+
+            if (y < 100) break;
+        }
+    }
+
     // ================= TOUCH =================
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -188,8 +212,6 @@ public class GameView extends View {
         return d <= a.radius * 2.2f;
     }
 
-
-
     // ================= CONNECTED DFS =================
     private void findConnected(Bubble start, ArrayList<Bubble> result) {
         result.add(start);
@@ -205,4 +227,3 @@ public class GameView extends View {
         }
     }
 }
-
