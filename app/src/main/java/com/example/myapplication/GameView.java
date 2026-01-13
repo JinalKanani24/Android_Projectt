@@ -149,30 +149,7 @@ public class GameView extends View {
     }
 
     // ================= WALL BOUNCE AIM LINE =================
-    private void drawBounceAimLine(Canvas canvas) {
-        paint.setColor(Color.WHITE);
-        paint.setAlpha(160);
-
-        float x = bx;
-        float y = by;
-
-        float dx = aimX;
-        float dy = aimY;
-
-        for (int i = 0; i < 25; i++) {
-            x += dx * 50;
-            y += dy * 50;
-
-            // Wall bounce
-            if (x < ballRadius || x > getWidth() - ballRadius) {
-                dx = -dx;
-            }
-
-            canvas.drawCircle(x, y, 6, paint);
-
-            if (y < 100) break;
-        }
-    }
+    private void drawBounceAimLine(Canvas canvas)
     // ================= TOUCH =================
     @Override
     public boolean onTouchEvent(MotionEvent event) {
