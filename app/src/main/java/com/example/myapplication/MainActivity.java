@@ -1,4 +1,4 @@
-package com.example.bubbleshooter;
+package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -24,31 +24,6 @@ public class MainActivity extends AppCompatActivity {
         Button btnPlay = findViewById(R.id.btnPlay);
         Button btnSettings = findViewById(R.id.btnSettings);
         TextView title = findViewById(R.id.title);
-        @SuppressLint("MissingInflatedId") FrameLayout gameLayout = findViewById(R.id.game_layout);
 
-        // 2. PLAY BUTTON CLICK LOGIC
-        btnPlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Front page na buttons ne hide kari do
-                title.setVisibility(View.GONE);
-                btnPlay.setVisibility(View.GONE);
-                btnSettings.setVisibility(View.GONE);
 
-                // Game View ne screen par add karo (Level 1 start thashe)
-                GameView gameView = new GameView(MainActivity.this, 1);
-                gameLayout.addView(gameView);
-            }
-        });
-
-        // 3. SETTINGS BUTTON CLICK LOGIC
-        btnSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Settings activity chalu karo
-                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-}
+      
