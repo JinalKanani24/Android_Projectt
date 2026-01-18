@@ -1,4 +1,4 @@
-package com.example.bubbleshooter;
+package com.example.myapplication;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.example.myapplication.Bubble;
 
 import java.util.ArrayList;
 import java.util.Random;

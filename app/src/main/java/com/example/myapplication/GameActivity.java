@@ -8,6 +8,6 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         int levelNum = getIntent().getIntExtra("LEVEL", 1);
-        setContentView(new com.example.bubbleshooter.GameView(this, levelNum));
+        setContentView(new com.example.myapplication.GameView(this, levelNum));
     }
 }

@@ -1,5 +1,6 @@
 package com.example.bubbleshooter;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,10 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication.GameView;
+import com.example.myapplication.R;
+import com.example.myapplication.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnPlay = findViewById(R.id.btnPlay);
         Button btnSettings = findViewById(R.id.btnSettings);
         TextView title = findViewById(R.id.title);
-        FrameLayout gameLayout = findViewById(R.id.game_layout);
+        @SuppressLint("MissingInflatedId") FrameLayout gameLayout = findViewById(R.id.game_layout);
 
         // 2. PLAY BUTTON CLICK LOGIC
         btnPlay.setOnClickListener(new View.OnClickListener() {
