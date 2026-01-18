@@ -28,3 +28,7 @@ public class SettingsActivity extends AppCompatActivity {
             prefs.edit().putBoolean("sound", isChecked).apply();
         });
 
+        // Back button thi pacha java mate
+        btnBack.setOnClickListener(v -> finish());
+    }
+}
