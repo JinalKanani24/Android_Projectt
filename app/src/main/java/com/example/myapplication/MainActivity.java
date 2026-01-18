@@ -26,4 +26,11 @@ public class MainActivity extends AppCompatActivity {
         TextView title = findViewById(R.id.title);
 
 
-      
+        // 2. PLAY BUTTON CLICK LOGIC
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Front page na buttons ne hide kari do
+                title.setVisibility(View.GONE);
+                btnPlay.setVisibility(View.GONE);
+                btnSettings.setVisibility(View.GONE);
