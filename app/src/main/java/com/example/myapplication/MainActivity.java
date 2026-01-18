@@ -41,3 +41,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // 3. SETTINGS BUTTON CLICK LOGIC
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Settings activity chalu karo
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+}
