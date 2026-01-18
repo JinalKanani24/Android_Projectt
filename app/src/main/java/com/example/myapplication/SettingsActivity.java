@@ -18,4 +18,8 @@ public class SettingsActivity extends AppCompatActivity {
         Switch switchSound = findViewById(R.id.switchSound);
         Button btnBack = findViewById(R.id.btnBack);
 
-        
+// SharedPreferences mathi sound setting load karo
+        SharedPreferences prefs = getSharedPreferences("GamePrefs", MODE_PRIVATE);
+        boolean isSoundOn = prefs.getBoolean("sound", true);
+        switchSound.setChecked(isSoundOn);
+
