@@ -34,3 +34,10 @@ public class MainActivity extends AppCompatActivity {
                 title.setVisibility(View.GONE);
                 btnPlay.setVisibility(View.GONE);
                 btnSettings.setVisibility(View.GONE);
+
+                // Game View ne screen par add karo (Level 1 start thashe)
+                GameView gameView = new GameView(MainActivity.this, 1);
+                gameLayout.addView(gameView);
+            }
+        });
+
