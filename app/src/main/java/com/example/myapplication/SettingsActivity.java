@@ -23,3 +23,8 @@ public class SettingsActivity extends AppCompatActivity {
         boolean isSoundOn = prefs.getBoolean("sound", true);
         switchSound.setChecked(isSoundOn);
 
+// Switch toggle thay tyare save karo
+        switchSound.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            prefs.edit().putBoolean("sound", isChecked).apply();
+        });
+
